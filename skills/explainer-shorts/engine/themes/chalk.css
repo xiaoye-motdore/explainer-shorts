@@ -1,0 +1,64 @@
+/* explainer-shorts · chalk theme
+ * Classroom blackboard: chalk-white handwriting, yellow and pink chalk, wooden frame. */
+body.chalk {
+  --board: #22352C; --chalk: #F2F0E6; --yellow: #F5D76E; --pink: #F4A7A7; --blue: #A8D0F5; --soft: #9FB3A6;
+  font-family: 'LXGW WenKai', 'Noto Sans SC', serif; color: var(--chalk); background: var(--board);
+  /* engine settings (see reference/themes.md) */
+  --es-write: ink; --es-reveal: circle; --es-underline: on; --es-shake: on; --es-stamp: rubber;
+  --es-texture: grain; --es-grain-rgb: 235,240,230; --es-sound: pen; --es-music: musicbox;
+  --es-left: 124; --es-right: 120; --es-ink: #F5D76E; --es-mark: #F5D76E; --es-hl-size: 36%; --es-bullet: '·';
+}
+.chalk #paper, .chalk .paperbg {
+  background-color: var(--board);
+  background-image:
+    radial-gradient(ellipse 55% 22% at 28% 30%, rgba(255,255,255,.055), rgba(255,255,255,0) 70%),
+    radial-gradient(ellipse 45% 18% at 72% 72%, rgba(255,255,255,.045), rgba(255,255,255,0) 70%),
+    repeating-linear-gradient(98deg, rgba(255,255,255,.014) 0 3px, rgba(255,255,255,0) 3px 11px);
+  background-size: 1080px 1500px, 1080px 1500px, auto;
+}
+.chalk #grain, .chalk .grainbg { mix-blend-mode: screen; opacity: .45; }
+.chalk #vignette {
+  background: radial-gradient(ellipse at 50% 45%, rgba(0,0,0,0) 55%, rgba(0,0,0,.38) 100%);
+  box-shadow: inset 0 0 0 22px #6E4B2A, inset 0 0 0 26px #4A321C, inset 0 0 30px 26px rgba(0,0,0,.35);
+  z-index: 40;
+}
+.chalk #content { text-shadow: 0 0 1px rgba(255,255,255,.35), 0 0 7px rgba(255,255,255,.07); }
+
+.chalk .blk-title   { font-size: 96px; font-weight: 700; line-height: 1.3; }
+.chalk .blk-heading { font-size: 62px; font-weight: 700; color: var(--yellow); line-height: 1.3; margin-bottom: 30px; }
+.chalk .blk-line,
+.chalk .blk-item    { font-size: 68px; line-height: 1.45; margin-top: 16px; }
+.chalk .blk-tag     { font-size: 66px; line-height: 1.45; margin-top: 22px; }
+.chalk .blk-note    { font-size: 54px; color: var(--pink); line-height: 1.38; margin-top: 26px; transform: rotate(-1.6deg); transform-origin: left center; }
+.chalk .blk-guess   { font-size: 62px; color: var(--soft); line-height: 1.4; margin-top: 18px; }
+.chalk .blk-reveal  { font-size: 124px; font-weight: 700; line-height: 1.22; margin: 40px 0 36px 8px; transform-origin: 12% 60%; }
+.chalk .blk-formula { font-family: 'Caveat', 'LXGW WenKai', cursive; font-weight: 700; font-size: 76px; color: var(--blue); line-height: 1.3; margin-top: 22px; }
+.chalk .blk-source  { font-size: 34px; color: var(--soft); line-height: 1.4; margin-top: 16px; letter-spacing: 1px; }
+.chalk .blk-svg     { margin-top: 24px; color: var(--chalk); transform-origin: 30% 60%; }
+.chalk .blk-svg .accent { stroke: var(--yellow); color: var(--yellow); }
+.chalk .blk-svg .accent-fill { fill: var(--yellow); }
+.chalk .blk-title + .blk-note { margin-top: 34px; }
+
+.chalk .em   { color: var(--yellow); font-weight: 700; }
+.chalk .hand { font-family: 'Caveat', cursive; color: var(--blue); font-weight: 700; font-size: 1.16em; line-height: 1; }
+.chalk .code { font-family: 'IBM Plex Mono', monospace; font-size: .8em; color: var(--blue); }
+.chalk .hl {
+  background-image: linear-gradient(rgba(245,215,110,.30), rgba(245,215,110,.30));
+  background-repeat: no-repeat; background-position: 0 88%; background-size: 0% 36%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone; border-radius: 4px;
+}
+.chalk .tag {
+  display: inline-block; font-size: 44px; font-weight: 700; color: var(--yellow); border: 3px solid var(--yellow);
+  border-radius: 10px; padding: 0 14px; margin-right: 18px; position: relative; top: -6px; line-height: 1.35;
+}
+.chalk .bullet { display: inline-block; color: var(--yellow); width: 46px; font-weight: 700; }
+.chalk .item-body { display: inline; }
+
+.chalk .end { margin-top: 120px; text-align: right; padding-right: 10px; }
+.chalk .end .sig { font-size: 46px; color: var(--soft); letter-spacing: 2px; }
+.chalk .end .credit { font-size: 30px; color: var(--soft); margin-top: 18px; letter-spacing: 1px; }
+
+.chalk #cover { background-color: var(--board); }
+.chalk .cv-title { position: absolute; left: 124px; right: 100px; font-size: 112px; font-weight: 700; line-height: 1.26; text-shadow: 0 0 1px rgba(255,255,255,.35); }
+.chalk .cv-sub { position: absolute; left: 124px; right: 100px; font-size: 58px; color: var(--pink); transform: rotate(-1.6deg); transform-origin: left center; }
+.chalk .cv-sig { position: absolute; right: 80px; font-size: 40px; color: var(--soft); letter-spacing: 2px; }

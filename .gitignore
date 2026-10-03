@@ -1,0 +1,4 @@
+node_modules/
+explainer-shorts-out/
+.DS_Store
+*.log

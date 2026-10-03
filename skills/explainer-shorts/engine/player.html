@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>explainer-shorts player</title>
+<link rel="stylesheet" href="themes/base.css">
+<script src="parse.js"></script>
+<script src="timing.js"></script>
+<script src="audio.js"></script>
+<script src="engine.js"></script>
+</head>
+<body>
+<div id="stage">
+  <div id="bg"></div>
+  <canvas id="fx" width="1080" height="1920"></canvas>
+  <div id="world">
+    <div id="paper"></div>
+    <div id="grain"></div>
+    <div id="content"></div>
+    <svg id="ink" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  <div id="cover"></div>
+  <div id="vignette"></div>
+  <div id="debug"></div>
+</div>
+<script>ES.boot();</script>
+</body>
+</html>

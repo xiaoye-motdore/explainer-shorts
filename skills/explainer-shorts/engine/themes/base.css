@@ -1,0 +1,22 @@
+/* explainer-shorts · shared layout */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision; }
+#stage { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+#bg, #fx, #vignette, #grainfix { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; pointer-events: none; }
+#world { position: absolute; left: 0; top: 0; width: 1080px; will-change: transform; }
+#paper, #grain { position: absolute; left: 0; top: 0; width: 1080px; }
+#content { position: absolute; }
+.sec { position: relative; }
+.blk { position: relative; }
+.u { display: inline-block; white-space: pre; }
+.fit { white-space: nowrap; }
+.num { display: inline-block; text-align: left; font-variant-numeric: tabular-nums; }
+#ink { position: absolute; left: 0; top: 0; overflow: visible; pointer-events: none; z-index: 5; }
+#ink path { fill: none; stroke-linecap: round; stroke-linejoin: round; visibility: hidden; }
+.blk-svg svg { display: block; overflow: visible; margin: 0 auto; }
+.blk-svg svg * { stroke-linecap: round; stroke-linejoin: round; }
+#cover { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; display: none; overflow: hidden; }
+#debug { position: absolute; right: 18px; top: 14px; font: 600 30px 'IBM Plex Mono', monospace; color: #e0334a;
+  background: rgba(255,255,255,.75); padding: 2px 10px; border-radius: 6px; z-index: 99; display: none; }
+.end { position: relative; }

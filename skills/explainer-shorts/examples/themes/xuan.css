@@ -1,0 +1,78 @@
+/* A custom theme: rice paper (宣纸), ink, vermilion seal.
+ * Use it with   theme: ./themes/xuan.css   in a script's front matter,
+ * or            --theme path/to/xuan.css   on the command line.
+ *
+ * Copy this file to start your own look. Rules:
+ *   - Custom themes get <body class="custom">, so every selector starts with .custom
+ *   - Engine settings are the --es-* properties below (all optional; see reference/themes.md)
+ *   - Bundled fonts you can use: 'LXGW WenKai', 'Noto Sans SC', 'Caveat', 'Space Grotesk', 'IBM Plex Mono'
+ *   - Images and fonts referenced with url(...) are resolved next to this file
+ */
+body.custom {
+  --paper: #F2E8D5; --ink: #1E1A16; --ink-soft: #6B6157; --seal: #B8322A; --wash: rgba(30,26,22,.10);
+  font-family: 'LXGW WenKai', 'Noto Sans SC', serif; color: var(--ink); background: var(--paper);
+
+  --es-write: ink;            /* ink = written stroke by stroke · kinetic = rises in */
+  --es-reveal: circle;        /* circle = hand-drawn ellipse · glow = underline + glow */
+  --es-underline: on;         /* hand-drawn underline under titles and headings */
+  --es-shake: off;            /* small camera shake on reveals */
+  --es-stamp: rubber;         /* rubber = stamped at an angle · pill = soft pop */
+  --es-texture: grain;        /* grain = paper fibres overlay · none */
+  --es-grain-rgb: 120,96,64;  /* colour of the fibres */
+  --es-sound: pen;            /* pen = pencil, marker, bells · air = swishes, booms */
+  --es-music: plucks;         /* musicbox · plucks (pentatonic) · none */
+  --es-left: 150; --es-right: 130;
+  --es-ink: #1E1A16;          /* title underline */
+  --es-mark: #B8322A;         /* strikes, circles, heading underline */
+  --es-hl-size: 30%;
+  --es-bullet: '·';
+}
+.custom #paper, .custom .paperbg {
+  background-color: var(--paper);
+  background-image:
+    radial-gradient(ellipse 60% 18% at 20% 35%, var(--wash), rgba(0,0,0,0) 70%),
+    radial-gradient(ellipse 40% 14% at 85% 75%, rgba(30,26,22,.06), rgba(0,0,0,0) 70%),
+    repeating-linear-gradient(87deg, rgba(120,96,64,.035) 0 1px, rgba(0,0,0,0) 1px 7px);
+  background-size: 1080px 1700px, 1080px 1700px, auto;
+}
+.custom #grain, .custom .grainbg { mix-blend-mode: multiply; opacity: .9; }
+.custom #vignette { background: radial-gradient(ellipse at 50% 45%, rgba(255,255,255,0) 58%, rgba(90,60,30,.16) 100%); z-index: 40; }
+
+.custom .blk-title   { font-size: 100px; font-weight: 700; line-height: 1.32; letter-spacing: 4px; }
+.custom .blk-heading { font-size: 60px; font-weight: 700; line-height: 1.3; margin-bottom: 30px; letter-spacing: 6px; }
+.custom .blk-line,
+.custom .blk-item    { font-size: 68px; line-height: 1.5; margin-top: 16px; letter-spacing: 2px; }
+.custom .blk-tag     { font-size: 64px; line-height: 1.5; margin-top: 22px; }
+.custom .blk-note    { font-size: 52px; color: var(--ink-soft); line-height: 1.4; margin-top: 26px; }
+.custom .blk-guess   { font-size: 60px; color: var(--ink-soft); line-height: 1.4; margin-top: 18px; }
+.custom .blk-reveal  { font-size: 128px; font-weight: 700; line-height: 1.22; margin: 40px 0 36px 8px; letter-spacing: 8px; transform-origin: 12% 60%; }
+.custom .blk-formula { font-family: 'IBM Plex Mono', 'LXGW WenKai', monospace; font-size: 54px; color: var(--ink); line-height: 1.4; margin-top: 22px; }
+.custom .blk-source  { font-size: 32px; color: var(--ink-soft); line-height: 1.4; margin-top: 16px; letter-spacing: 1px; }
+.custom .blk-svg     { margin-top: 24px; color: var(--ink); }
+.custom .blk-svg .accent { stroke: var(--seal); color: var(--seal); }
+.custom .blk-svg .accent-fill { fill: var(--seal); }
+
+.custom .em   { color: var(--seal); font-weight: 700; }
+.custom .hand { font-family: 'Caveat', cursive; font-weight: 700; font-size: 1.12em; }
+.custom .code { font-family: 'IBM Plex Mono', monospace; font-size: .8em; }
+.custom .hl {
+  background-image: linear-gradient(rgba(184,50,42,.18), rgba(184,50,42,.18));
+  background-repeat: no-repeat; background-position: 0 90%; background-size: 0% 30%;
+  -webkit-box-decoration-break: clone; box-decoration-break: clone;
+}
+/* the [tag] label becomes a square vermilion seal */
+.custom .tag {
+  display: inline-block; font-size: 38px; font-weight: 700; color: #FBF3E6; background: var(--seal);
+  border-radius: 6px; padding: 2px 12px; margin-right: 18px; position: relative; top: -8px; letter-spacing: 2px; line-height: 1.4;
+}
+.custom .bullet { display: inline-block; color: var(--seal); width: 46px; font-weight: 700; }
+.custom .item-body { display: inline; }
+
+.custom .end { margin-top: 120px; text-align: right; padding-right: 10px; }
+.custom .end .sig { font-size: 46px; color: var(--ink-soft); letter-spacing: 4px; }
+.custom .end .credit { font-size: 28px; color: var(--ink-soft); margin-top: 18px; letter-spacing: 1px; }
+
+.custom #cover { background-color: var(--paper); }
+.custom .cv-title { position: absolute; left: 150px; right: 110px; font-size: 116px; font-weight: 700; line-height: 1.3; letter-spacing: 6px; }
+.custom .cv-sub { position: absolute; left: 150px; right: 110px; font-size: 56px; color: var(--seal); }
+.custom .cv-sig { position: absolute; right: 90px; font-size: 40px; color: var(--ink-soft); letter-spacing: 4px; }

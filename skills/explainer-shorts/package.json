@@ -1,0 +1,15 @@
+{
+  "name": "explainer-shorts-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Runtime dependencies for the explainer-shorts skill (installed on first run into a cache folder).",
+  "license": "MIT",
+  "dependencies": {
+    "playwright-core": "1.56.0",
+    "lxgw-wenkai-webfont": "1.7.0",
+    "@fontsource/caveat": "5.3.0",
+    "@fontsource/noto-sans-sc": "5.3.0",
+    "@fontsource/space-grotesk": "5.3.0",
+    "@fontsource/ibm-plex-mono": "5.3.0"
+  }
+}
